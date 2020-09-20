@@ -1,0 +1,12 @@
+<div class="data-node">
+	<div class="test"></div>
+	<ng-container *ngIf="viewModel$ | async as viewModel">
+		<ng-container *ngIf="viewModel.children">
+			<p>{{ viewModel.ref.key }}</p>
+			<ng-container *ngFor="let ref of viewModel.children">
+				<rx-data-node *rxIfIsVisible [ref]="ref"></rx-data-node>
+			</ng-container>
+		</ng-container>
+		<rx-leaf-node *ngIf="viewModel.value" [ref]="viewModel.ref" [value]="viewModel.value"></rx-leaf-node>
+	</ng-container>
+</div>

@@ -1,0 +1,4 @@
+<div rxScrollingHost class="scroll-area">
+  <rx-data-node [ref]="rootRef$ | async"></rx-data-node>
+</div>
+<div>Data nodes rendered: {{ renderedLeafCount$ | async }}</div>
